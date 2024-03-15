@@ -3,10 +3,12 @@ const choices = ["rock", "paper", "scissors"];
 document.querySelectorAll('.choices button').forEach(button => {
     button.addEventListener('click', () => {
         document.getElementById('result').innerText = ""; // Limpiar resultado anterior
-        document.getElementById('countdown').innerText = "3"; // Mostrar contador inicial
         const playerChoice = button.id;
         const computerChoice = choices[Math.floor(Math.random() * choices.length)];
-        countdownAndShowResult(playerChoice, computerChoice);
+        document.getElementById('countdown').innerText = "3"; // Mostrar contador inicial
+        setTimeout(() => {
+            countdownAndShowResult(playerChoice, computerChoice);
+        }, 1000);
     });
 });
 
